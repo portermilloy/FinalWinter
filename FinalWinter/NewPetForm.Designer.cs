@@ -31,8 +31,8 @@
             gbPet = new GroupBox();
             btnClear = new Button();
             btnSave = new Button();
-            txtAnimal = new TextBox();
             txtBreed = new TextBox();
+            txtAnimal = new TextBox();
             txtName = new TextBox();
             lblBreed = new Label();
             lblAnimal = new Label();
@@ -46,27 +46,24 @@
             gbPet.AutoSize = true;
             gbPet.Controls.Add(btnClear);
             gbPet.Controls.Add(btnSave);
-            gbPet.Controls.Add(txtAnimal);
             gbPet.Controls.Add(txtBreed);
+            gbPet.Controls.Add(txtAnimal);
             gbPet.Controls.Add(txtName);
             gbPet.Controls.Add(lblBreed);
             gbPet.Controls.Add(lblAnimal);
             gbPet.Controls.Add(lblName);
-            gbPet.Location = new Point(20, 19);
-            gbPet.Margin = new Padding(5);
+            gbPet.Location = new Point(12, 12);
             gbPet.Name = "gbPet";
-            gbPet.Padding = new Padding(5);
-            gbPet.Size = new Size(810, 338);
+            gbPet.Size = new Size(498, 211);
             gbPet.TabIndex = 3;
             gbPet.TabStop = false;
             gbPet.Text = "New Pet";
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(647, 240);
-            btnClear.Margin = new Padding(5);
+            btnClear.Location = new Point(398, 150);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(153, 46);
+            btnClear.Size = new Size(94, 29);
             btnClear.TabIndex = 7;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
@@ -74,76 +71,68 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(10, 240);
-            btnSave.Margin = new Padding(5);
+            btnSave.Location = new Point(6, 150);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(153, 46);
+            btnSave.Size = new Size(94, 29);
             btnSave.TabIndex = 6;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
             // 
-            // txtAnimal
-            // 
-            txtAnimal.Location = new Point(133, 107);
-            txtAnimal.Margin = new Padding(5);
-            txtAnimal.Name = "txtAnimal";
-            txtAnimal.Size = new Size(664, 39);
-            txtAnimal.TabIndex = 5;
-            // 
             // txtBreed
             // 
-            txtBreed.Location = new Point(133, 160);
-            txtBreed.Margin = new Padding(5);
+            txtBreed.Location = new Point(82, 100);
             txtBreed.Name = "txtBreed";
-            txtBreed.Size = new Size(664, 39);
-            txtBreed.TabIndex = 4;
+            txtBreed.Size = new Size(410, 27);
+            txtBreed.TabIndex = 5;
+            // 
+            // txtAnimal
+            // 
+            txtAnimal.Location = new Point(82, 67);
+            txtAnimal.Name = "txtAnimal";
+            txtAnimal.Size = new Size(410, 27);
+            txtAnimal.TabIndex = 4;
             // 
             // txtName
             // 
-            txtName.Location = new Point(133, 54);
-            txtName.Margin = new Padding(5);
+            txtName.Location = new Point(82, 34);
             txtName.Name = "txtName";
-            txtName.Size = new Size(664, 39);
+            txtName.Size = new Size(410, 27);
             txtName.TabIndex = 3;
             // 
             // lblBreed
             // 
             lblBreed.AutoSize = true;
-            lblBreed.Location = new Point(10, 165);
-            lblBreed.Margin = new Padding(5, 0, 5, 0);
+            lblBreed.Location = new Point(6, 103);
             lblBreed.Name = "lblBreed";
-            lblBreed.Size = new Size(81, 32);
+            lblBreed.Size = new Size(51, 20);
             lblBreed.TabIndex = 2;
             lblBreed.Text = "Breed:";
             // 
             // lblAnimal
             // 
             lblAnimal.AutoSize = true;
-            lblAnimal.Location = new Point(10, 112);
-            lblAnimal.Margin = new Padding(5, 0, 5, 0);
+            lblAnimal.Location = new Point(6, 70);
             lblAnimal.Name = "lblAnimal";
-            lblAnimal.Size = new Size(93, 32);
+            lblAnimal.Size = new Size(59, 20);
             lblAnimal.TabIndex = 1;
             lblAnimal.Text = "Animal:";
             // 
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.Location = new Point(10, 59);
-            lblName.Margin = new Padding(5, 0, 5, 0);
+            lblName.Location = new Point(6, 37);
             lblName.Name = "lblName";
-            lblName.Size = new Size(123, 32);
+            lblName.Size = new Size(76, 20);
             lblName.TabIndex = 0;
             lblName.Text = "Pet Name:";
             // 
             // NewPetForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(848, 376);
+            ClientSize = new Size(522, 235);
             Controls.Add(gbPet);
-            Margin = new Padding(5);
             Name = "NewPetForm";
             Text = "NewPetForm";
             gbPet.ResumeLayout(false);
@@ -158,8 +147,8 @@
         private Label lblBreed;
         private Label lblAnimal;
         private Label lblName;
-        private TextBox txtAnimal;
         private TextBox txtBreed;
+        private TextBox txtAnimal;
         private TextBox txtName;
         private Button btnClear;
         private Button btnSave;

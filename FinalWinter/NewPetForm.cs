@@ -13,7 +13,7 @@ namespace FinalWinter
     public partial class NewPetForm : Form
     {
         private MainForm _mainForm;
-        private int CustomerCount = 0;
+        private int PetCount = 0;
         private bool IsEditing;
         private int CurrentSelectionId;
 
@@ -21,7 +21,7 @@ namespace FinalWinter
         {
             InitializeComponent();
             _mainForm = form;
-            CustomerCount++;
+            PetCount++;
             IsEditing = false;
             CurrentSelectionId = -1;
         }
@@ -38,12 +38,12 @@ namespace FinalWinter
                 MessageBox.Show("The Pet Name is empty, please enter the name of your pet.");
                 return;
             }
-            if (CheckIfValid(txtAnimal))
+            if (CheckIfValid(txtBreed))
             {
                 MessageBox.Show("Animal is empty, please enter the type of animal your pet is.");
                 return;
             }
-            if (CheckIfValid(txtBreed))
+            if (CheckIfValid(txtAnimal))
             {
                 MessageBox.Show("Breed is empty, please enter the breed of your pet.");
                 return;
@@ -51,17 +51,49 @@ namespace FinalWinter
 
             Pets pet = new Pets
             {
-                PetId = PetId,
+                PetId = PetCount,
                 PetName = txtName.Text,
+                Animal = txtBreed.Text,
+                Breed = txtAnimal.Text
+            };
 
-            }
-
-
+            _mainForm.AddPet(pet);
+            PetCount++;
         }
 
         private bool CheckIfValid(Control control)
         {
             return control.Text == "";
+        }
+
+        private void EditPet()
+        {
+            if (CheckIfValid(txtName))
+            {
+                MessageBox.Show("The Pet Name is empty, please enter the name of your pet.");
+                return;
+            }
+            if (CheckIfValid(txtBreed))
+            {
+                MessageBox.Show("Animal is empty, please enter the type of animal your pet is.");
+                return;
+            }
+            if (CheckIfValid(txtAnimal))
+            {
+                MessageBox.Show("Breed is empty, please enter the breed of your pet.");
+                return;
+            }
+
+            _mainForm.EditPet(CurrentSelectionId, new Pets
+            {
+                PetId = CurrentSelectionId,
+                PetName = txtName.Text,
+                Animal = txtBreed.Text,
+                Breed = txtAnimal.Text
+            });
+
+            CurrentSelectionId = -1;
+            ToggleEdit(false);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -86,16 +118,16 @@ namespace FinalWinter
         private void ClearForm()
         {
             txtName.Text = "";
-            txtAnimal.Text = "";
             txtBreed.Text = "";
+            txtAnimal.Text = "";
         }
 
         public void LoadPet(Pets pet)
         {
             CurrentSelectionId = pet.PetId;
             txtName.Text = pet.PetName;
-            txtAnimal.Text = pet.Animal;
-            txtBreed.Text = pet.Breed;
+            txtBreed.Text = pet.Animal;
+            txtAnimal.Text = pet.Breed;
         }
 
         

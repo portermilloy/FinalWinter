@@ -6,10 +6,11 @@ namespace FinalWinter
     {
         private NewPetForm _petForm;
         private List<Pets> _petList;
+
         public MainForm()
         {
             InitializeComponent();
-            _petForm = new NewPetForm();
+            _petForm = new NewPetForm(this);
             _petList = new List<Pets>();
 
             _petList.Add(new Pets
@@ -36,7 +37,7 @@ namespace FinalWinter
         public void AddPet(Pets pet)
         {
             _petList.Add(pet);
-            ReloadDataGrid();
+            ReloadPage();
         }
 
         public void EditPet(int id, Pets updPet)
@@ -62,6 +63,17 @@ namespace FinalWinter
             pet = _petList[index];
 
             _petForm.LoadPet(pet);
+
+            _petForm.ToggleEdit(true);
+
+            _petForm.Show();
         }
+
+        private void dgvPets_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEdit.Visible = true;
+        }
+
+        
     }
 }
